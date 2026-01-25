@@ -10,43 +10,57 @@ beforeEach(function (): void {
 });
 
 describe('405 > Authorized', function (): void {
-    test('put > index api', function (): void {
-        $this->put(route('files.index', 1))
-            ->assertStatus(405);
-    });
-
-    test('put json > index api', function (): void {
-        $this->putJson(route('files.index', 1))
-            ->assertStatus(405);
-    });
-
-    test('delete > index api', function (): void {
-        $this->delete(route('files.index', 1))
-            ->assertStatus(405);
-    });
-
-    test('delete json > index api', function (): void {
-        $this->deleteJson(route('files.index', 1))
-            ->assertStatus(405);
-    });
-
-    test('post json > show api', function (): void {
-        $this->postJson(route('files.show', 1))
-            ->assertStatus(405);
-    });
-
-    test('post > delete api', function (): void {
-        $this->post(route('files.destroy', 1))
-            ->assertStatus(405);
-    });
-
-    test('post json > delete api', function (): void {
-        $this->postJson(route('files.destroy', 1))
-            ->assertStatus(405);
-    });
-
-    test('post json > edit api', function (): void {
-        $this->postJson(route('files.edit', 1))
-            ->assertStatus(405);
-    });
+    apiTestArray([
+        'put > index api' => [
+            'method' => 'PUT',
+            'route' => 'files.index',
+            'status' => 405,
+            'id' => 1,
+            'json' => false,
+        ],
+        'put json > index api' => [
+            'method' => 'PUT',
+            'route' => 'files.index',
+            'status' => 405,
+            'id' => 1,
+        ],
+        'delete > index api' => [
+            'method' => 'DELETE',
+            'route' => 'files.index',
+            'status' => 405,
+            'id' => 1,
+            'json' => false,
+        ],
+        'delete json > index api' => [
+            'method' => 'DELETE',
+            'route' => 'files.index',
+            'status' => 405,
+            'id' => 1,
+        ],
+        'post json > show api' => [
+            'method' => 'POST',
+            'route' => 'files.show',
+            'status' => 405,
+            'id' => 1,
+        ],
+        'post > delete api' => [
+            'method' => 'POST',
+            'route' => 'files.destroy',
+            'status' => 405,
+            'id' => 1,
+            'json' => false,
+        ],
+        'post json > delete api' => [
+            'method' => 'POST',
+            'route' => 'files.destroy',
+            'status' => 405,
+            'id' => 1,
+        ],
+        'post json > edit api' => [
+            'method' => 'POST',
+            'route' => 'files.edit',
+            'status' => 405,
+            'id' => 1,
+        ],
+    ]);
 });
