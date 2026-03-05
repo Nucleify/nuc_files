@@ -2,12 +2,12 @@ import type { EntityFieldInterface, UseFieldsInterface } from 'atomic'
 
 export function useFileFields(): UseFieldsInterface<EntityFieldInterface> {
   const fieldData: readonly [string, string, string][] = [
-    ['user_id', 'User ID', 'input-text'],
-    ['path', 'Path', 'input-text'],
-    ['mime_type', 'Mime Type', 'input-text'],
-    ['size', 'Size', 'input-text'],
-    ['updated_at', 'Updated At', ''],
-    ['created_at', 'Created At', ''],
+    ['user_id', 'field-user-id', 'input-text'],
+    ['path', 'field-path', 'input-text'],
+    ['mime_type', 'field-mime-type', 'input-text'],
+    ['size', 'field-size', 'input-text'],
+    ['updated_at', 'field-updated-at', ''],
+    ['created_at', 'field-created-at', ''],
   ] as const
 
   const createAndEditFields: readonly EntityFieldInterface[] = fieldData
