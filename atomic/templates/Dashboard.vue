@@ -32,8 +32,8 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import type { NucDashboardInterface } from 'atomic'
-import { fileRequests, useFileFields, useNucDialog } from 'atomic'
+import type { NucDashboardInterface } from 'nucleify'
+import { fileRequests, useFileFields, useNucDialog } from 'nucleify'
 
 const props = defineProps<NucDashboardInterface>()
 const { t } = useI18n()

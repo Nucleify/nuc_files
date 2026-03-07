@@ -1,16 +1,16 @@
 import { beforeEach, describe, expect, it, type Mock, vi } from 'vitest'
 
-import * as atomic from 'atomic'
+import * as nucleify from 'nucleify'
 
 describe('fileRequests', (): void => {
-  const { closeDialog } = atomic.useNucDialog()
-  const requests: atomic.NucFileRequestsInterface =
-    atomic.fileRequests(closeDialog)
-  const mockResponse = [atomic.mockFile]
+  const { closeDialog } = nucleify.useNucDialog()
+  const requests: nucleify.NucFileRequestsInterface =
+    nucleify.fileRequests(closeDialog)
+  const mockResponse = [nucleify.mockFile]
 
   beforeEach((): void => {
     vi.clearAllMocks()
-    atomic.mockGlobalFetch(vi, mockResponse)
+    nucleify.mockGlobalFetch(vi, mockResponse)
   })
 
   it('getAllFiles', async (): Promise<void> => {
@@ -25,7 +25,7 @@ describe('fileRequests', (): void => {
   })
 
   it('storeFile', async (): Promise<void> => {
-    await requests.storeFile(atomic.mockFile)
+    await requests.storeFile(nucleify.mockFile)
     expect(
       (globalThis as unknown as { $fetch: Mock }).$fetch
     ).toHaveBeenCalledWith(
@@ -36,7 +36,7 @@ describe('fileRequests', (): void => {
   })
 
   it('editFile', async (): Promise<void> => {
-    await requests.editFile(atomic.mockFile)
+    await requests.editFile(nucleify.mockFile)
     expect(
       (globalThis as unknown as { $fetch: Mock }).$fetch
     ).toHaveBeenCalledWith(
@@ -47,7 +47,7 @@ describe('fileRequests', (): void => {
   })
 
   it('deleteFile', async (): Promise<void> => {
-    await requests.deleteFile(atomic.mockFile.id ?? 0)
+    await requests.deleteFile(nucleify.mockFile.id ?? 0)
     expect(
       (globalThis as unknown as { $fetch: Mock }).$fetch
     ).toHaveBeenCalledWith(

@@ -1,4 +1,4 @@
-import type { NucFileObjectInterface } from 'atomic'
+import type { NucFileObjectInterface } from 'nucleify'
 
 export const mockFile: NucFileObjectInterface = {
   id: 999,

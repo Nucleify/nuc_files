@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 
-import { fileRequests, useNucDialog } from 'atomic'
+import { fileRequests, useNucDialog } from 'nucleify'
 
 const { closeDialog } = useNucDialog()
 
