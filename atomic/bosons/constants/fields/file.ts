@@ -2,7 +2,6 @@ import type { EntityFieldInterface, UseFieldsInterface } from 'nucleify'
 
 export function useFileFields(): UseFieldsInterface<EntityFieldInterface> {
   const fieldData: readonly [string, string, string][] = [
-    ['user_id', 'field-user-id', 'input-text'],
     ['path', 'field-path', 'input-text'],
     ['mime_type', 'field-mime-type', 'input-text'],
     ['size', 'field-size', 'input-text'],
